@@ -4,7 +4,8 @@ export const corsOptions = {
     // origin: 'https://arbor-project-client.vercel.app',
     // exposedHeaders: '*',
 
-    "origin": "https://arbor-project-client.vercel.app",
+    // "origin": "https://arbor-project-client.vercel.app",
+    "origin": "true",
     // "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
     "preflightContinue": false,
     "optionsSuccessStatus": 204
