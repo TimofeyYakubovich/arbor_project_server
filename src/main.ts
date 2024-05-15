@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { urlencoded, json } from 'express';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
+import { corsOptions } from './etc/corsOptions';
 
 const start = async () => {
   try {
@@ -19,9 +20,7 @@ const start = async () => {
 
     app.use(json({ limit: '50mb' }));
     app.use(urlencoded({ extended: true, limit: '50mb' }));
-    app.enableCors({
-      origin: 'http://localhost:3000/',
-    }) // корс что бы отправлять запросы с браузера без проблем
+    app.enableCors(corsOptions) // корс что бы отправлять запросы с браузера без проблем
     await app.listen(PORT, () => console.log(`server started on port ${PORT}`))
   } catch (e) {
     console.log(e)
