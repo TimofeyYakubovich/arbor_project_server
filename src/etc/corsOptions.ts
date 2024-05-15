@@ -3,4 +3,5 @@ export const corsOptions = {
     credentials: true,
     // origin: 'http://localhost:3000',
     origin: 'https://arbor-project-client.vercel.app',
-  };
+    exposedHeaders: '*',
+};
